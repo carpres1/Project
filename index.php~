@@ -1,5 +1,5 @@
 <?php
-#require_once __DIR__ . '/facebook/autoload.php';
+require_once __DIR__ . '/facebook/autoload.php';
 session_start();
 
 require_once( 'Facebook/HttpClients/FacebookHttpable.php' );
@@ -21,7 +21,7 @@ require_once( 'Facebook/GraphObject.php' );
 require_once( 'Facebook/GraphUser.php');
 require_once( 'Facebook/GraphSessionInfo.php' );
 
-use Facebook\HttpClients\FacebookHttpable;
+#use Facebook\HttpClients\FacebookHttpable;
 use Facebook\HttpClients\FacebookCurl;
 use Facebook\HttpClients\FacebookCurlHttpClient;
 use Facebook\Entities\AccessToken;
