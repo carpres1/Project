@@ -1,5 +1,6 @@
 <?php
 
+require_once __DIR__ . '/src/facebook/autoload.php';
 session_start();
 
 require_once( 'Facebook/HttpClients/FacebookHttpable.php' );

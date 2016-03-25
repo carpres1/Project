@@ -1,5 +1,6 @@
 <?php
 
+require_once __DIR__ . '/src/facebook/autoload.php';
 session_start();
 
 require_once( 'Facebook/HttpClients/FacebookHttpable.php' );
@@ -64,4 +65,4 @@ if ($session) {
 	$auth_url = $helper->getLoginUrl(array('email'));
 	echo "<script>window.top.location.href='".$auth_url."'</script>";
 }
-?>
+
