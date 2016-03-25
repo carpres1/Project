@@ -40,7 +40,7 @@ use Facebook\GraphObject;
 use Facebook\GraphUser;
 use Facebook\GraphSessionInfo;
 
-$facebook = FacebookSession::setDefaultApplication('APP-ID','APP-SECRET-KEY');
+$facebook = FacebookSession::setDefaultApplication('727092907434360','c67e09be0ca2199cf4da15486f074fd2');
 $helper = new FacebookCanvasLoginHelper();
 
 try {
@@ -52,15 +52,16 @@ try {
 }
 if ($session) {
 	try {
-		// $request = new FacebookRequest($session, 'GET', '/me');
-		// $response = $request->execute();
-		// $me = $response->getGraphObject();
-		// echo $me->getProperty('name');
+		 $request = new FacebookRequest($session, 'GET', '/me');
+		 $response = $request->execute();
+		 $me = $response->getGraphObject();
+		 echo $me->getProperty('name');
 		} catch(FacebookRequestException $e) {
 		echo $e->getMessage();
 	}
 } else {
-	$helper = new FacebookRedirectLoginHelper('https://apps.facebook.com/APP-NAMESPACE/');
+	$helper = new FacebookRedirectLoginHelper('https://apps.facebook.com/getting_meaty/');
 	$auth_url = $helper->getLoginUrl(array('email'));
 	echo "<script>window.top.location.href='".$auth_url."'</script>";
 }
+?>
