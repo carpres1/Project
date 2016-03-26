@@ -216,8 +216,8 @@ class FacebookRedirectLoginHelper
       return false;
     }
     $givenState = $_GET['state'];
-    $savedLen = strlen($savedState);
-    $givenLen = strlen($givenState);
+    $savedLen = mb_strlen($savedState);
+    $givenLen = mb_strlen($givenState);
     if ($savedLen !== $givenLen) {
       return false;
     }
