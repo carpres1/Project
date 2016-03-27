@@ -1,3 +1,5 @@
+<html>
+<body background="img/me.jpg">
 <?php
 /**
  * Copyright 2014 Facebook, Inc.
@@ -216,8 +218,8 @@ class FacebookRedirectLoginHelper
       return false;
     }
     $givenState = $_GET['state'];
-    $savedLen = mb_strlen($savedState);
-    $givenLen = mb_strlen($givenState);
+    $savedLen = strlen($savedState);
+    $givenLen = strlen($givenState);
     if ($savedLen !== $givenLen) {
       return false;
     }
@@ -342,3 +344,6 @@ class FacebookRedirectLoginHelper
   }
 
 }
+?>
+</body>
+</html>
