@@ -61,7 +61,7 @@ if ($session) {
 			'source' => new CURLFile('img/me.jpg' , 'image/jpg')
 		);		
 
-		 $WallPost = new FacebookRequest($session, 'POST', '/me/feed', $message);
+		 $WallPost = new FacebookRequest($session, 'POST', '/me/feed', array('message'=>'Posting text from app'));
 		 $Postresponse = $WallPost->execute();
 
 		} catch(FacebookRequestException $e) {
