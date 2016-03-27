@@ -1,5 +1,3 @@
-<html>
-<body background="img/me.jpg">
 <?php
 /**
  * Copyright 2014 Facebook, Inc.
@@ -344,6 +342,3 @@ class FacebookRedirectLoginHelper
   }
 
 }
-?>
-</body>
-</html>

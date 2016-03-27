@@ -1,3 +1,5 @@
+<html>
+<body background='img/me.jpg'>
 <?php
 #require_once __DIR__ . '/facebook/autoload.php';
 session_start();
@@ -61,8 +63,8 @@ if ($session) {
 			'source' => new CURLFile('img/me.jpg' , 'image/jpg')
 		);		
 
-		 $WallPost = new FacebookRequest($session, 'POST', '/me/feed', array('message'=>'Posting text from app'));
-		 $Postresponse = $WallPost->execute();
+		# $WallPost = new FacebookRequest($session, 'POST', '/me/feed', array('message'=>'Posting text from app'));
+		# $Postresponse = $WallPost->execute();
 
 		} catch(FacebookRequestException $e) {
 		echo $e->getMessage();
@@ -72,4 +74,6 @@ if ($session) {
 	$auth_url = $helper->getLoginUrl(array('email'));
 	echo "<script>window.top.location.href='".$auth_url."'</script>";
 }
-
+?>
+</body>
+</html>
