@@ -21,7 +21,7 @@ require_once( 'Facebook/GraphObject.php' );
 require_once( 'Facebook/GraphUser.php');
 require_once( 'Facebook/GraphSessionInfo.php' );
 
-#use Facebook\HttpClients\FacebookHttpable;
+use Facebook\HttpClients\FacebookHttpable;
 use Facebook\HttpClients\FacebookCurl;
 use Facebook\HttpClients\FacebookCurlHttpClient;
 use Facebook\Entities\AccessToken;
@@ -56,6 +56,13 @@ if ($session) {
 		 $response = $request->execute();
 		 $me = $response->getGraphObject();
 		 echo $me->getProperty('name');
+		 
+		 $message = array(
+			'source' => new CURLFile('img/me.jpg' , 'image/jpg'))		
+
+		 $WallPost = new FacebookRequest($session, 'POST', '/me/feed', $message);
+		 $Postresponse = $WallPost->execute();
+
 		} catch(FacebookRequestException $e) {
 		echo $e->getMessage();
 	}
