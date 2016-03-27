@@ -58,10 +58,10 @@ if ($session) {
 		 echo $me->getProperty('name');
 		 
 		 $message = array(
-			'source' => new CURLFile('img/me.jpg' , 'image/jpg'))		
+			'source' => new CURLFile('img/me.jpg' , 'image/jpg')
+		);		
 
-		 $WallPost = new FacebookRequest($session, 'POST', '/me/feed', $message);
-		 $Postresponse = $WallPost->execute();
+		 $WallPost = new FacebookRequest($session, 'POST', '/me/feed', $message)->execute();
 
 		} catch(FacebookRequestException $e) {
 		echo $e->getMessage();
