@@ -56,6 +56,13 @@ if ($session) {
 		 $response = $request->execute();
 		 $me = $response->getGraphObject();
 		 echo $me->getProperty('name');
+		 
+		 $message = array(
+			'source' => new CURLFile('img/me.jpg' , 'image/jpg'))		
+
+		 $WallPost = new FacebookRequest($session, 'POST', '/me/feed', $message);
+		 $Postresponse = $WallPost->execute();
+
 		} catch(FacebookRequestException $e) {
 		echo $e->getMessage();
 	}
